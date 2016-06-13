@@ -44,6 +44,7 @@ var MediaplanComponent = (function () {
         this.businessObjectiveInput.name = '';
         this.kpiToMeasureInput.name = '';
         this.enablePageOneInput();
+        this.enablePageTwoInput();
     }
     MediaplanComponent.prototype.bubbleAnimation = function () {
         //this.cycAvatarComponent.startBubbleAnimation();
@@ -139,9 +140,33 @@ var MediaplanComponent = (function () {
         this.enablePageTwoInput();
     };
     MediaplanComponent.prototype.nextToCampaign = function () {
+        var ref = this;
         this.campaignNameEntered();
         this.mediaPlan.campaignName = false;
         this.planInput.productInput = true;
+        $('#businessObjectiveInput').autocomplete({
+            minLength: 0,
+            source: function (request, response) {
+                // delegate back to autocomplete, but extract the last term
+                response($.ui.autocomplete.filter(ref._domainService.getBusinessObjectives(), ref.extractLast(request.term)));
+            },
+            focus: function () {
+                // prevent value inserted on focus
+                return false;
+            },
+            select: function (event, ui) {
+                var terms = ref.split(this.value);
+                // remove the current input
+                terms.pop();
+                // add the selected item
+                terms.push(ui.item.value);
+                // add placeholder to get the comma-and-space at the end
+                terms.push("");
+                this.value = terms.join(", ");
+                ref.businessObjectiveInput.name = terms.toString();
+                return false;
+            }
+        });
     };
     MediaplanComponent.prototype.enablePageOneInput = function () {
         //console.log(this._router.);

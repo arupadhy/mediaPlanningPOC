@@ -25,10 +25,10 @@ public class HomeController {
 		return "index.html";
 	}
 	
-	@RequestMapping("/clientBrief")
-	public @ResponseBody String clientBrief() {
-		return CLIENT_BRIEF;
-	}
+//	@RequestMapping("/clientBrief")
+//	public @ResponseBody String clientBrief() {
+//		return CLIENT_BRIEF;
+//	}
 	
 	@RequestMapping("/getdomain")
 	public @ResponseBody List<Object> getDomainData(@RequestParam String name) throws Exception {

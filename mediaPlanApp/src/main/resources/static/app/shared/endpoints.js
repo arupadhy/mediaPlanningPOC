@@ -1,6 +1,6 @@
 "use strict";
 var app_1 = require("../../app");
-var host = 'http://localhost:4200';
+var host = 'http://localhost:8080';
 var DEMO_HOST = 'http://localhost:8080';
 var endpoints = {
     GET_CLIENTS_API: host + "/clients",
