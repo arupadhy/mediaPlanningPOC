@@ -1,0 +1,36 @@
+body {
+  background-color: #1E1131; }
+
+.next-page {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background-color: #48DFB5;
+  position: fixed;
+  bottom: 0; }
+  .next-page h4 {
+    font-size: 20px;
+    font-weight: 100;
+    color: #1E1131;
+    margin: 0;
+    padding-top: 20px; }
+    .next-page h4 .next-icon {
+      color: #1E1131;
+      height: 40px;
+      width: 40px;
+      border: 1px solid #1E1131;
+      border-radius: 100px;
+      transform: rotate(90deg);
+      display: inline-block;
+      position: relative;
+      top: -10px;
+      left: 10px; }
+      .next-page h4 .next-icon span {
+        font-size: 22px;
+        position: relative;
+        top: 8px;
+        left: 0px; }
+    .next-page h4 .next-icon:hover {
+      cursor: pointer; }
+    .next-page h4 .hide {
+      visibility: hidden; }

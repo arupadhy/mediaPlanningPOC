@@ -1,0 +1,87 @@
+{  
+   "error":"",
+   "statusCode":200,
+   "mriFieldConstraints":[  
+      {  
+         "index":"1463496578960-0",
+         "question":{  
+            "nl":"the survey question derived from the statement: “I prefer cooking with fresh food rather than canned or frozen”",
+            "cycl":"(SurveyQuestionFromStatementFn PreferCookingWithFreshFood-Specification)"
+         },
+         "answers":[  
+            {  
+               "nl":"Agree Somewhat",
+               "cycl":"StatementResponse-SomewhatAgree"
+            },
+            {  
+               "nl":"Agree Completely",
+               "cycl":"StatementResponse-StronglyAgree"
+            }
+         ]
+      },
+      {  
+         "index":"1463496583242-0",
+         "question":{  
+            "nl":"the survey question derived from the statement: “During a given week, I cook meals frequently”",
+            "cycl":"(SurveyQuestionFromStatementFn CookMealsFrequently-Specification)"
+         },
+         "answers":[  
+            {  
+               "nl":"Agree Somewhat",
+               "cycl":"StatementResponse-SomewhatAgree"
+            },
+            {  
+               "nl":"Agree Completely",
+               "cycl":"StatementResponse-StronglyAgree"
+            }
+         ]
+      },
+      {  
+         "index":"1463496595604-0",
+         "question":{  
+            "nl":"the survey question derived from the statement: “Price is more important to me than brand names”",
+            "cycl":"(SurveyQuestionFromStatementFn PriceMoreImportantThanBrandNames-Specification)"
+         },
+         "answers":[  
+            {  
+               "nl":"Agree Somewhat",
+               "cycl":"StatementResponse-SomewhatAgree"
+            },
+            {  
+               "nl":"Agree Completely",
+               "cycl":"StatementResponse-StronglyAgree"
+            }
+         ]
+      },
+      {  
+         "index":"1463496595604-1",
+         "question":{  
+            "nl":"the survey question derived from the statement: “My favorite grocery store offers low prices on all products every day”",
+            "cycl":"(SurveyQuestionFromStatementFn FavoriteGroceryStoreOffersLowPrices-Specification)"
+         },
+         "answers":[  
+            {  
+               "nl":"Agree Somewhat",
+               "cycl":"StatementResponse-SomewhatAgree"
+            },
+            {  
+               "nl":"Agree Completely",
+               "cycl":"StatementResponse-StronglyAgree"
+            }
+         ]
+      },
+      {  
+         "index":"1463496615792-0",
+         "question":{  
+            "nl":"the survey question derived from the statement: “You Personally: Shopped in Last 6 months:  Dave Mart”",
+            "cycl":"(SurveyQuestionFromStatementFn ShoppedAtWalmart-LastSixMonths-Specification)"
+         },
+         "answers":[  
+            {  
+               "nl":"Yes.",
+               "cycl":"True"
+            }
+         ]
+      }
+   ]
+}

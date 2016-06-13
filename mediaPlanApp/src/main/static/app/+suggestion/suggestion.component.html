@@ -1,0 +1,137 @@
+<div *ngIf="!mriQueryInProgress" class="suggestions-container">
+	<div *ngIf="questions.length" class="mri-questions-content">
+			<div class="product-info">
+				<h2 class="product-details">{{selectedInputs.client}} / {{selectedInputs.campaign}}/ {{selectedInputs.product}} </h2>
+				<p (dblclick)="enableEdit()" [ngClass]="{active:editAudienceEnabled}" class='target-audience'>"{{selectedInputs.audience}}"</p>
+				<div [ngClass]="{active:!editAudienceEnabled}" (keydown)="editTargetAudience($event)" class="selected-target-audience">
+					<input [(ngModel)]="selectedInputs.audience" type="text">
+				</div>
+			</div>
+        <h2 *ngIf="!mriFields.length" class='recommendations-total'>Cyc's MRI question builder  ({{questions.length}})</h2>
+      <h2 *ngIf="mriFields.length && !audienceInsightQueryInProgress" class='recommendations-total'>Cyc's MRI questions for export  ({{mriFields.length}})</h2>
+	</div>
+
+	<div *ngIf="questions.length" class="suggestions-content">
+		<div class='query-builder'>
+	    <div class='group-btn'> + Group </div>
+	    <query-builder (query)="fireNewQuery($event)"></query-builder>
+	    <div class="suggestions-list">
+	      	<cyc-question sessionId="{{sessionId}}" *ngFor="let list of questions;let i = index" [question]="list" [index]="i" ></cyc-question>
+	    </div>
+  	</div>
+		<div *ngIf="reachData" class="mri-query-container">
+      <h2>MRI Query</h2>
+			<span>{{queryConstructedSoFar}}</span>
+      <span>Make your selections to the left</span>
+      <h3>MRI Expected Results</h3>
+      <h4 class='mri-expected-header'>Target Reach<span class='reach-value'>{{reachData.targetReach}}</span></h4>
+      <div class='target-reach-bar'></div>
+      <h4 class='mri-expected-header'>Current Reach<span class='reach-value'>{{reachData.currentReach}}</span></h4>
+      <div class='current-reach-bar'></div>
+
+      <div class='mri-query-footer'>
+        <div class='footer-item'>
+          <div class='progress-circ'>
+            <span>{{reachData.vertical}}%</span>
+          </div>
+          <span class='progress-title'>VERTICAL</span>
+        </div>
+        <div class='footer-item'>
+          <div class='progress-circ'>
+            <span>{{reachData.horizontal}}%</span>
+          </div>
+          <span class='progress-title'>HORIZONTAL</span>
+        </div>
+        <div class='footer-item'>
+          <h3>{{reachData.index}}</h3>
+          <span class='progress-title'>INDEX</span>
+        </div>
+      </div>
+    </div>
+	</div>
+	<div *ngIf="questions.length" class='next-page'>
+	  <h4>Select Cyc's recommended MRI fields for Export
+	    <div  *ngIf="queryConstructedSoFar" class="next-icon" (click)="loadMriFields()" ><span>&#10141;</span></div>
+			<!-- <i  *ngIf="queryConstructedSoFar" (click)="loadMriFields()" class="next-icon" ></i> -->
+	  </h4>
+	</div>
+</div>
+
+<div *ngIf="mriFields.length && !audienceInsightQueryInProgress" class="mri-fields-constraints">
+	<div *ngIf="questions.length" class="mri-questions-content">
+			<div class="product-info">
+				<h2 class="product-details">{{selectedInputs.client}} / {{selectedInputs.campaign}}/ {{selectedInputs.product}} </h2>
+				<p (dblclick)="enableEdit()" [ngClass]="{active:editAudienceEnabled}" class='target-audience'>"{{selectedInputs.audience}}"</p>
+				<div [ngClass]="{active:!editAudienceEnabled}" (keydown)="editTargetAudience($event)" class="selected-target-audience">
+					<input [(ngModel)]="selectedInputs.audience" type="text">
+				</div>
+			</div>
+        <h2 *ngIf="!mriFields.length" class='recommendations-total'>Cyc's MRI question builder  ({{questions.length}})</h2>
+      <h2 *ngIf="mriFields.length && !audienceInsightQueryInProgress" class='recommendations-total'>Cyc's MRI questions for export  ({{mriFields.length}})</h2>
+	</div>
+
+	<div class="recommended-fields-container">
+		<div class="recommended-fields-content">
+			<div class="query-fields">
+				<div class="recommended-fields-header">
+					<span class="toggle">+</span>
+					<span class="fields">Standard Fields</span>
+				</div>
+				<ul>
+					<li *ngFor="let field of recommendedFields" (click)='selectField(field)'>
+						<div class='checkBox' [ngClass]="{hide:!field.fieldSelected}">&#10003;</div>{{field.value}}
+					</li>
+				</ul>
+			</div>
+
+			<div class='additional-query-fields'>
+			<!-- <div class="mri-question-list"> -->
+				<div class="recommended-fields-header">
+					<span class="toggle">+</span>
+					<span class="fields">Additional Suggested Fields</span>
+				</div>
+				<div class='question-container'>
+		   		<div *ngFor="let q of mriFields" class="mri-question">
+		      	<div class='mri-question-header'>
+							<span  (click)="selectQuestion(q)">{{q.nl}}</span>
+						</div>
+			      <ul>
+			        <li *ngFor="let answer of q.answers" (click)='selectAnswer(answer)'>
+								<div class='checkBox'>&#10003;</div>
+								<span>{{answer.nl}}</span>
+							</li>
+			      </ul>
+		   		</div>
+		 		</div>
+			</div>
+		</div>
+</div>
+
+	<div *ngIf="mriFields.length && !audienceInsightQueryInProgress" class='next-page'>
+			<h4>Get Audience Insight
+				<i [ngClass]="{active:!allSelectedFields.length > 0}" class="next-icon" (click)="loadInsight()"><span>&#10141;</span></i>
+			</h4>
+	</div>
+
+</div>
+
+<div *ngIf="mriQueryInProgress && audienceInsightQueryInProgress"  class='audience-insights-section'>
+	<div *ngIf="questions.length" class="mri-questions-content">
+			<div class="product-info">
+				<h2 class="product-details">{{selectedInputs.client}} / {{selectedInputs.campaign}}/ {{selectedInputs.product}} </h2>
+				<p (dblclick)="enableEdit()" [ngClass]="{active:editAudienceEnabled}" class='target-audience'>"{{selectedInputs.audience}}"</p>
+				<div [ngClass]="{active:!editAudienceEnabled}" (keydown)="editTargetAudience($event)" class="selected-target-audience">
+					<input [(ngModel)]="selectedInputs.audience" type="text">
+				</div>
+			</div>
+				<h2 *ngIf="!mriFields.length" class='recommendations-total'>Cyc's MRI question builder  ({{questions.length}})</h2>
+			<h2 *ngIf="mriFields.length && !audienceInsightQueryInProgress" class='recommendations-total'>Cyc's MRI questions for export  ({{mriFields.length}})</h2>
+	</div>
+	<div class="audience-insights-container">
+		<div class='audience-insights-content'>
+			<ul>
+				<li *ngFor="let insights of audienceInsights">{{insights | json}}</li>
+			</ul>
+		</div>
+	</div>
+</div>

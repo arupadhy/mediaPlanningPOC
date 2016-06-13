@@ -1,0 +1,56 @@
+<div class="concepts-container">
+	<div *ngIf="concepts.length" class="concepts-plan-content">
+		<div class="product-info">
+			<h2 class="product-details">{{selectedInputs.client}} / {{selectedInputs.campaign}}/ {{selectedInputs.product}} </h2>
+			<p (dblclick)="enableEdit()" [ngClass]="{active:editAudienceEnabled}" class='target-audience'>"{{selectedInputs.audience}}"</p>
+			<div [ngClass]="{active:!editAudienceEnabled}" (keydown)="disableEdit($event)" class="selected-target-audience">
+				<input [(ngModel)]="selectedInputs.audience" type="text">
+			</div>
+		</div>
+		<h2 class='recommendations-total'>Cyc's concepts & statement recommendations  ({{concepts.length}})</h2>
+		<cyc-avatar></cyc-avatar>
+	</div>
+	<div *ngIf="concepts.length" class="concepts-sentences-container" [hidden]="isProofViewOpen">
+		<div class='concepts-sentence-list'>
+			<div class="concept-sentence" *ngFor="let concept of concepts;#i = index">
+				<!--<p class='question' [ngClass]="{active:concept.sentenceRationale}" (click)='showRationale(concept)'>?</p>-->
+				<!--<div *ngIf="rationale" class='rationale-container' [hidden]='!concept.sentenceRationale'>
+					<h3>Rationale</h3>
+					<span class='rationale'>{{rationale | json}}</span>
+				</div>-->
+				<div class='concept-header' [ngClass]='{selected:concept.selected}'>
+					<span class='toggle' (click)='toggleSentences(concept.sentences)'>+</span>
+					<span class='concept-name'>{{concept.name}}</span>
+					<span [hidden]="!concept.isNew" class='new-concept'>NEW CONCEPT</span>
+
+				</div>
+				<span class="index-concept">{{concept.index}}</span>
+				<ul *ngIf="i == 0" [ngClass]="{remove:concept.sentences.showSentences}">
+					<li *ngFor="let s of concept.sentences" (click)='selectSentence(concept, s)'>
+						<div class='checkBox' [ngClass]="{hide:!s.sentenceSelected}">&#10003;</div>
+						<span class='sentence'>{{s.name}}</span>
+					</li>
+				</ul>
+				<ul *ngIf="i !== 0"[ngClass]="{remove:!concept.sentences.showSentences}">
+					<li *ngFor="let s of concept.sentences" (click)='selectSentence(concept, s)'>
+						<div class='checkBox' [ngClass]="{hide:!s.sentenceSelected}">&#10003;</div>
+						<span class='sentence'>{{s.name}}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="concepts.length" class='next-page'>
+		<h4>Select Cyc's recommended MRI questions & answers
+			<div [ngClass]="{active:!allSelectedSentences.length > 0}" class="next-icon" (click)="loadCycQuestions()"><span>&#10141;</span></div>
+			
+		</h4>
+	</div>
+</div>
+<div id= "proofDialog" class="question-proof">
+	<h2>Proof for Concepts</h2>
+	<div *ngFor=" let proof of rationale">
+		<h3>{{proof.title}}</h3>
+		<span [innerHTML]="proof.content"></span>
+	</div>
+</div>

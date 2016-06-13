@@ -1,0 +1,31 @@
+.nav-link.router-link-active {
+  border-bottom: 1px solid #818a91; }
+
+.media-app-header {
+  height: 80px;
+  background-color: #1E1131; }
+  .media-app-header .header-text {
+    color: white;
+    font-size: 14px;
+    padding: 2px;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 55px;
+    margin-right: 40px; }
+  .media-app-header .app-nav {
+    display: inline-block; }
+    .media-app-header .app-nav .app-tab {
+      display: inline-block;
+      border: 1px solid #48DFB5;
+      color: #48DFB5;
+      padding: 5px;
+      opacity: 0.5;
+      font-size: 14px; }
+    .media-app-header .app-nav .active {
+      opacity: 1; }
+
+.container {
+  height: 100%; }
+
+.container a {
+  display: none; }

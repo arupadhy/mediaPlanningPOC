@@ -1,0 +1,25 @@
+[
+	{
+		"client":"Dave Mart",
+		"headline":"Overview for 2016",
+		"description": "We are a major retailer with both general merchandise and fresh grocery (meat and produce).  We are trying to grow our Fresh sales with existing customers. Customers who shop with us for dry groceries but go to competitors for fresh purchases",
+		"budget": {
+			"total": "700k",
+			"used": "150k",
+			"available": "550k"
+		},
+		"image":"/app/shared/Chart-Image.png"
+	},
+	{
+		"client":"Dave Mart",
+		"headline":"Overview for 2015",
+		"description": "As a major retailer we are expanding our general merchandise to include fresh groceries. We would like our current customers to start making their fresh grocery purchases from us. The campaign should promote sales.",
+		"budget": {
+			"total": "800k",
+			"used": "250k",
+			"available": "550k"
+		},
+		"image":"/app/shared/Chart-Image2.png"
+	}
+
+]

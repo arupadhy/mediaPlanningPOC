@@ -1,0 +1,33 @@
+<div class="client-brief-section">
+	<h1 class='results'>2 Results Found for Dave Mart</h1>
+	<div *ngFor="let clientBrief of clientBriefs;let i = index" class="client-brief-container">
+		<div class="client-brief-header">
+			<span class="client-name"> {{clientBrief.client}}</span>
+			<span class="media-plan-action">
+				<i class="add-plan-icon" (click)="createMediaPlan(clientBrief.client)"></i><span (click)="createMediaPlan(clientBrief.client)">Create Media Plan</span>
+				<i class="edit-plan-icon"></i><span>Edit Media Plan</span>
+			</span>
+		</div>
+
+		<div class="client-brief-content">
+			<div class="client-brief-data">
+				<h4 class="overview">{{clientBrief.headline}}</h4>
+				<span class="description">{{clientBrief.description}}</span>
+				<div class="budget-distribution">
+					<!-- <canvas width="300" height="200"></canvas> -->
+					<!-- <img class="chart-img" src="/app/shared/Chart-Image.png"/> -->
+					<img class="chart-img" src="{{clientBrief.image}}"/>
+					<!-- <h4 class='total-budget'>Total Budget: {{clientBrief.budget.total}}</h4>
+					<div class='budget-percent'><span>45%</span></div>
+					<h4 class='used-budget'>Used: {{clientBrief.budget.used}}</h4>
+					<h4 class='available-budget'>Available: {{clientBrief.budget.available}}</h4> -->
+				</div>
+			</div>
+			<div *ngIf="i==0" class=client-image-container>
+				<img class="client-brief-image" src='/app/shared/groceries1.jpeg'/>
+				<img class="client-brief-image" src='/app/shared/groceries2.jpeg'/>
+			</div>
+			<!-- <div class="clear"></div> -->
+		</div>
+	</div>
+</div>

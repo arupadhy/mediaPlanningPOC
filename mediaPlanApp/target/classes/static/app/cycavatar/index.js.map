@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/app/cycavatar/index.ts"],"names":[],"mappings":";AAAA,oCAAmC,uBAAuB,CAAC;AAAlD,sEAAkD","sourcesContent":["export { CycavatarComponent } from './cycavatar.component';\r\n"]}

@@ -1,0 +1,189 @@
+.suggestions-container {
+  color: #fff; }
+  .suggestions-container .suggestions-content {
+    background-color: #08040C;
+    height: 100%; }
+    .suggestions-container .suggestions-content .query-builder {
+      width: 62%;
+      margin-left: 17%;
+      display: inline-block; }
+      .suggestions-container .suggestions-content .query-builder .group-btn {
+        position: absolute;
+        top: 250px;
+        left: 10%;
+        border: 1px dashed #DDF937;
+        color: #DDF937;
+        padding: 5px; }
+      .suggestions-container .suggestions-content .query-builder .suggestions-list {
+        height: 195px;
+        overflow: auto; }
+      .suggestions-container .suggestions-content .query-builder .scroller::-webkit-scrollbar {
+        width: 2px; }
+      .suggestions-container .suggestions-content .query-builder .scroller::-webkit-scrollbar-track {
+        background: #FFFFFF; }
+      .suggestions-container .suggestions-content .query-builder .scroller::-webkit-scrollbar-thumb {
+        background: #48DFB5; }
+    .suggestions-container .suggestions-content .mri-query-container {
+      font-weight: 100;
+      width: 20%;
+      display: inline-block;
+      vertical-align: top;
+      height: 500px;
+      padding: 10px;
+      box-sizing: border-box; }
+      .suggestions-container .suggestions-content .mri-query-container .mri-query-header {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #5A37F9; }
+      .suggestions-container .suggestions-content .mri-query-container .new-query {
+        font-size: 12px;
+        height: 150px;
+        overflow: auto;
+        margin: 0; }
+      .suggestions-container .suggestions-content .mri-query-container .mri-expected-header {
+        font-size: 14px;
+        margin-bottom: 0px;
+        margin-top: 10px;
+        display: inline-block;
+        min-width: 97px; }
+      .suggestions-container .suggestions-content .mri-query-container .reach-value {
+        padding-left: 65px;
+        font-size: 18px; }
+      .suggestions-container .suggestions-content .mri-query-container .target-reach-bar {
+        width: 70%;
+        height: 10px;
+        border: 1px solid #FFFFFF;
+        background-color: #FFFFFF; }
+      .suggestions-container .suggestions-content .mri-query-container .current-reach-bar {
+        width: 70%;
+        height: 10px;
+        border: 1px solid #FFFFFF;
+        display: inline-block; }
+        .suggestions-container .suggestions-content .mri-query-container .current-reach-bar .current-reach-progress {
+          max-width: 100%;
+          height: 100%;
+          background-color: #FFFFFF; }
+      .suggestions-container .suggestions-content .mri-query-container .current-reach-overflow-bar {
+        height: 10px;
+        width: 20%;
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        left: -5px; }
+        .suggestions-container .suggestions-content .mri-query-container .current-reach-overflow-bar .current-reach-overflow {
+          height: 100%;
+          max-width: 100%;
+          border: 1px solid #40EC43;
+          background-color: #40EC43; }
+      .suggestions-container .suggestions-content .mri-query-container .mri-query-footer {
+        margin-top: 30px; }
+        .suggestions-container .suggestions-content .mri-query-container .mri-query-footer .footer-item {
+          display: inline-block;
+          margin-right: 15px; }
+          .suggestions-container .suggestions-content .mri-query-container .mri-query-footer .footer-item .progress-circ {
+            height: 42px;
+            width: 42px;
+            border: 1px solid #FFFFFF;
+            border-radius: 100px; }
+            .suggestions-container .suggestions-content .mri-query-container .mri-query-footer .footer-item .progress-circ span {
+              position: relative;
+              font-weight: 100;
+              font-size: 14px;
+              top: 10px;
+              left: 10px; }
+          .suggestions-container .suggestions-content .mri-query-container .mri-query-footer .footer-item .progress-title {
+            font-size: 12px; }
+
+.active {
+  display: none; }
+
+.hide {
+  visibility: none; }
+
+.mri-questions-content {
+  background-color: #1E1131;
+  margin-left: 17%;
+  height: 105px; }
+  .mri-questions-content .product-info {
+    color: #FFFFFF;
+    font-weight: 600;
+    letter-spacing: 1px; }
+    .mri-questions-content .product-info .product-details {
+      font-size: 14px;
+      margin: 0; }
+    .mri-questions-content .product-info .target-audience {
+      font-style: italic;
+      font-weight: 100;
+      font-size: 14px; }
+    .mri-questions-content .product-info .target-audience:hover {
+      font-style: italic;
+      color: orange;
+      cursor: crosshair; }
+    .mri-questions-content .product-info .selected-target-audience {
+      background-color: white; }
+    .mri-questions-content .product-info .selected-target-audience input {
+      border: 0;
+      outline: 0; }
+  .mri-questions-content .recommendations-total {
+    color: #48DFB5;
+    margin: 0 0 17px;
+    font-weight: 100; }
+
+.mri-fields-constraints .recommended-fields-container {
+  background-color: #08040C;
+  height: 500px;
+  overflow: auto; }
+  .mri-fields-constraints .recommended-fields-container .recommended-fields-content {
+    color: #FFFFFF;
+    margin-left: 17%;
+    padding-top: 20px;
+    overflow: auto; }
+    .mri-fields-constraints .recommended-fields-container .recommended-fields-content .additional-query-fields,
+    .mri-fields-constraints .recommended-fields-container .recommended-fields-content .query-fields {
+      width: 80%; }
+      .mri-fields-constraints .recommended-fields-container .recommended-fields-content .additional-query-fields .recommended-fields-header,
+      .mri-fields-constraints .recommended-fields-container .recommended-fields-content .query-fields .recommended-fields-header {
+        height: 30px;
+        border: 1px solid #FFFFFF; }
+        .mri-fields-constraints .recommended-fields-container .recommended-fields-content .additional-query-fields .recommended-fields-header .toggle,
+        .mri-fields-constraints .recommended-fields-container .recommended-fields-content .query-fields .recommended-fields-header .toggle {
+          font-size: 24px;
+          padding-left: 5px; }
+      .mri-fields-constraints .recommended-fields-container .recommended-fields-content .additional-query-fields ul,
+      .mri-fields-constraints .recommended-fields-container .recommended-fields-content .query-fields ul {
+        padding-left: 3px;
+        margin-top: 10px;
+        height: 160px;
+        overflow: auto; }
+        .mri-fields-constraints .recommended-fields-container .recommended-fields-content .additional-query-fields ul li,
+        .mri-fields-constraints .recommended-fields-container .recommended-fields-content .query-fields ul li {
+          color: white;
+          list-style: none;
+          font-size: 14px;
+          padding-bottom: 10px; }
+          .mri-fields-constraints .recommended-fields-container .recommended-fields-content .additional-query-fields ul li .checkBox,
+          .mri-fields-constraints .recommended-fields-container .recommended-fields-content .query-fields ul li .checkBox {
+            font-size: 14px;
+            text-align: center;
+            margin: 0;
+            height: 20px;
+            width: 20px;
+            color: #48DFB5;
+            border: 1px solid #48DFB5;
+            border-radius: 100px;
+            display: inline-block; }
+
+.audience-insights-container {
+  background-color: #08040C;
+  height: 500px;
+  overflow: auto; }
+  .audience-insights-container .audience-insights-content {
+    width: 80%;
+    margin-left: 17%;
+    color: #FFFFFF; }
+    .audience-insights-container .audience-insights-content li {
+      padding: 15px; }
+
+.hide {
+  visibility: hidden; }

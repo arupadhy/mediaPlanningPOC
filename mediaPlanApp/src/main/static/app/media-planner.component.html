@@ -1,0 +1,42 @@
+<!--<nav class="navbar navbar-dark bg-inverse">
+    <a class="navbar-brand" [routerLink]="['/']">Sapient MediaScape</a>
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dashboard']">Latest</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/clients']">Clients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Keywords</a>
+        </li>
+    </ul>
+    <form class="form-inline pull-xs-right">
+        <input class="form-control" type="text" placeholder="Search">
+    </form>
+</nav>-->
+
+<div class='media-app-header'>
+	<span class="header-text">SAPIENT MEDIASCAPE</span>
+	<!--<div class="app-nav">
+		<div class='app-tab'>
+			<span>Step 1: Media Plan</span>
+		</div>
+		<div class='app-tab'>
+			<span>Step 2: Concepts & Statements</span>
+		</div>
+		<div class='app-tab'>
+			<span>Step 3: MRI Q & A</span>
+		</div>
+		<div class='app-tab'>
+			<span>Step 4: Export Data</span>
+		</div>
+	</div>-->
+</div>
+
+<div id="spinner"></div>
+
+<div class="container">
+    <a [routerLink]="['/clientBrief']"> Brief</a>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,17 @@
+<div id="yyy" (drop)="drop($event)" (dragover)="test($event)"class="query-builder-container">
+    <div *ngFor="let q of existingQuestions" class="question-container">
+        <span *ngIf="q.operand" class="query-operand">{{q.operand}}</span>
+        <span *ngIf="q.question" class="question-number">{{q.question}}</span>
+    </div>
+    <!-- <div class="query-placeholder">
+      <h1>+</h1>
+      <span>Drag Question Here</span>
+    </div> -->
+</div>
+<!--<div *ngIf="reachData" class="reach-data-answer">
+  <span>TargetReach:</span><span>{{reachData.targetReach}}</span>
+  <span>CurrentReach:</span><span>{{reachData.currentReach}}</span>
+  <span>MRI Query:</span><span>{{reachData.query}}</span>
+</div>-->
+
+<div id="and-or-query" class="hide" title="Choose Query Constraints"></div>

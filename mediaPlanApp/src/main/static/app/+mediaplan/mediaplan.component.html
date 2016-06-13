@@ -1,0 +1,32 @@
+<form class="create-media-app">
+    <!--<cyc-avatar></cyc-avatar>-->
+    <div [ngClass]="{active:!mediaPlan.pageOne}">
+      <div class='plan-input'>
+        <p>What is the name of this campaign?</p>
+        <input id ="planNameInput" [(ngModel)]="planInput.planName" type="text" (keyup)="enablePageOneInput()" autofocus="autofocus">
+      </div>
+      <div class='product-input'>
+          <p>What product is this for?</p>
+          <input id="productNameInput" [(ngModel)]="productInput.productName" type="text" (keyup)="enablePageOneInput()">
+          <div [ngClass]="{active:!mediaPlan.nextPage}" (click)="submitPageOneInput()" class="next-icon"><span>&#10141;</span></div>
+      </div>
+    </div>
+     <div [ngClass]="{active:!mediaPlan.pageTwo}" >
+
+        <div class="business-input">
+            <p>What are the business Objectives?</p>
+            <input id="businessObjectiveInput" [(ngModel)]="businessObjectiveInput.name" type="text" (keyup)="enablePageTwoInput()">
+        </div>
+        <div class='kpi-input'>
+            <p>What are the KPI's to measure?</p>
+            <input id="kpiNameInput" [(ngModel)]="kpiToMeasureInput.name" type="text" (keyup)="enablePageTwoInput()">
+        </div>
+        <div class="audience-input">
+            <p>Who are the people you are trying to reach?</p>
+              <input id="audienceNameInput" [(ngModel)]="audienceInput.name" type="text" (keyup)="enablePageTwoInput()" autofocus="autofocus">
+              <div [ngClass]="{active:!mediaPlan.nextPage}" class="next-icon" (click)="getCycConcepts()"><span>&#10141;</span></div>
+        </div>
+    </div>
+</form>
+
+<!--<app-mediaplan-summary [planInput]="planInput" [productInput]="productInput" [audienceInput]="audienceInput" [mediaPlan]="mediaPlan" [businessObjectiveInput]="businessObjectiveInput" [kpiToMeasureInput]="kpiToMeasureInput" [client]="client"></app-mediaplan-summary>-->

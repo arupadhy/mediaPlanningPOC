@@ -1,0 +1,134 @@
+.hide {
+  visibility: hidden; }
+
+#proofQuestionId {
+  background-color: #1E1131; }
+  #proofQuestionId h3 {
+    color: wheat; }
+  #proofQuestionId span {
+    color: #FFFFFF; }
+
+#alertDialog {
+  background-color: #1E1131; }
+  #alertDialog p {
+    color: wheat; }
+
+.mri-question-container {
+  background-color: #1E1131; }
+  .mri-question-container .mri-questions-content {
+    background-color: #1E1131;
+    margin-left: 17%;
+    height: 105px; }
+  .mri-question-container .product-info {
+    color: #FFFFFF;
+    font-weight: 600;
+    letter-spacing: 1px; }
+    .mri-question-container .product-info .product-details {
+      font-size: 14px;
+      margin: 0; }
+    .mri-question-container .product-info .client-name {
+      font-size: 16px; }
+    .mri-question-container .product-info .campaign-name {
+      font-size: 26px;
+      margin-bottom: 10px;
+      margin-top: 10px; }
+    .mri-question-container .product-info .product-name {
+      font-size: 12px;
+      font-weight: 200;
+      margin: 0px; }
+    .mri-question-container .product-info .target-audience {
+      font-style: italic;
+      font-weight: 100;
+      font-size: 14px; }
+    .mri-question-container .product-info .target-audience:hover {
+      font-style: italic;
+      color: orange;
+      cursor: crosshair; }
+    .mri-question-container .product-info .selected-target-audience {
+      background-color: white; }
+      .mri-question-container .product-info .selected-target-audience input {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid white;
+        width: 90%;
+        color: black;
+        margin-bottom: 2px; }
+  .mri-question-container .recommendations-total {
+    color: #48DFB5;
+    margin: 0px;
+    margin-bottom: 17px;
+    font-weight: 100; }
+  .mri-question-container .mri-question-list {
+    background-color: #08040C;
+    color: #FFFFFF;
+    height: 500px;
+    overflow: auto; }
+    .mri-question-container .mri-question-list .question-container {
+      padding-top: 20px;
+      margin-left: 17%;
+      padding-bottom: 50px;
+      width: 80%; }
+      .mri-question-container .mri-question-list .question-container .mri-question .mri-question-header {
+        color: #48DFB5; }
+    .mri-question-container .mri-question-list .checkBox {
+      font-size: 14px;
+      text-align: center;
+      margin: 0px;
+      height: 20px;
+      width: 20px;
+      color: #48DFB5;
+      border: 1px solid #48DFB5;
+      border-radius: 100px;
+      display: inline-block;
+      margin-right: 3px; }
+    .mri-question-container .mri-question-list ul {
+      padding-left: 30px; }
+      .mri-question-container .mri-question-list ul li {
+        display: inline-block;
+        list-style: none;
+        width: 20%; }
+        .mri-question-container .mri-question-list ul li .hide {
+          visibility: hidden; }
+
+.next-page {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background-color: #48DFB5;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0; }
+  .next-page h4 {
+    font-size: 20px;
+    font-weight: 100;
+    color: #1E1131;
+    margin: 0;
+    padding-top: 20px; }
+
+.active {
+  display: none; }
+
+.next-icon {
+  display: inline-block;
+  height: 12px;
+  width: 16px;
+  margin-left: 5px;
+  background-image: url("/app/shared/ui-sprite-icons.png");
+  background-position: -48px -50px;
+  position: relative;
+  border-radius: 3px; }
+
+.question {
+  font-size: 18px;
+  text-align: center;
+  margin: 0px;
+  height: 20px;
+  width: 20px;
+  color: #48DFB5;
+  border: 1px solid #48DFB5;
+  border-radius: 100px;
+  display: inline-block;
+  margin-right: 7px;
+  margin-top: 0px;
+  float: left; }

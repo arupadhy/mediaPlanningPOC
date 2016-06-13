@@ -1,0 +1,29 @@
+<div class='media-app-header'>
+	<div [ngClass]="{hide:showAppHeader}" class="app-nav">
+		<span class="header-text">Sapient MEDIASCAPE</span>
+		<div class='app-tab' [style.width] = "12 + '%'" [ngClass]="{activeHeader:active.mediaPlan}">
+			<span (click)="navigateTo('mediaplan')">1: Media Plan</span>
+			<div class="tab-line media-plan"></div>
+		</div>
+		<div class='app-tab' [style.width] = "17 + '%'" [ngClass]="{activeHeader:active.concepts}">
+			<span (click)="navigateTo('concepts')">2: Concepts & Statements</span>
+			<div class="tab-line concepts"></div>
+		</div>
+		<div class='app-tab' [ngClass]="{activeHeader:active.mri}">
+			<span  (click)="navigateTo('suggestion')">3: MRI Q & A</span>
+			<div class="tab-line mri"></div>
+		</div>
+		<div class='app-tab' [ngClass]="{activeHeader:active.export}">
+			<span  (click)="navigateTo('mriquestion')">4: Export Data</span>
+			<div class="tab-line export"></div>
+		</div>
+    <div class="progress-media-plan-creation" *ngIf="active.mediaPlan">
+	    <div class="small-circle" [ngClass]="{active:completionStage.finishedStep1}"></div>
+	    <div class="small-circle" [ngClass]="{active:completionStage.finishedStep2}"></div>
+	    <div class="small-circle" [ngClass]="{active:completionStage.finishedStep3}"></div>
+	    <div class="small-circle" [ngClass]="{active:completionStage.finishedStep4}"></div>
+	    <div class="small-circle" [ngClass]="{active:completionStage.finishedStep5}"></div>
+    </div>
+   	<cyc-avatar showAvatar=false></cyc-avatar>
+	</div>
+</div>

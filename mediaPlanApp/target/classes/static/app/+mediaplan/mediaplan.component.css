@@ -1,0 +1,45 @@
+form {
+  background-color: #1E1131;
+  margin: 0;
+  padding-bottom: 50px; }
+  form .plan-input, form .product-input, form .audience-input, form .business-input, form .kpi-input {
+    margin-left: 20%;
+    padding-top: 8%; }
+    form .plan-input textarea, form .product-input textarea, form .audience-input textarea, form .business-input textarea, form .kpi-input textarea {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      border-bottom: 2px solid white;
+      width: 774px;
+      color: white;
+      margin-bottom: 2px;
+      overflow: auto;
+      font-size: 26px;
+      resize: none; }
+    form .plan-input p, form .product-input p, form .audience-input p, form .business-input p, form .kpi-input p {
+      color: #48DFB5;
+      font-size: 30px;
+      margin-top: 0px;
+      margin-bottom: 20px; }
+    form .plan-input .next-icon, form .product-input .next-icon, form .audience-input .next-icon, form .business-input .next-icon, form .kpi-input .next-icon {
+      color: #FFFFFF;
+      height: 40px;
+      width: 40px;
+      border: 1px solid #FFFFFF;
+      border-radius: 100px;
+      transform: rotate(90deg);
+      display: inline-block;
+      position: relative;
+      top: -4px;
+      left: 10px; }
+      form .plan-input .next-icon span, form .product-input .next-icon span, form .audience-input .next-icon span, form .business-input .next-icon span, form .kpi-input .next-icon span {
+        font-size: 22px;
+        position: relative;
+        top: 8px;
+        left: 8px; }
+    form .plan-input .next-icon:hover, form .product-input .next-icon:hover, form .audience-input .next-icon:hover, form .business-input .next-icon:hover, form .kpi-input .next-icon:hover {
+      cursor: pointer; }
+    form .plan-input .active, form .product-input .active, form .audience-input .active, form .business-input .active, form .kpi-input .active {
+      display: none; }
+  form .active {
+    display: none; }

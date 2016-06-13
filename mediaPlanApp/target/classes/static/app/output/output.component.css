@@ -1,0 +1,130 @@
+.output-section {
+  color: white; }
+  .output-section .mediaplan-container {
+    width: 100%; }
+    .output-section .mediaplan-container .mediaplan-content {
+      margin-left: 17%;
+      width: 60%;
+      margin-bottom: 20px;
+      font-weight: 100; }
+      .output-section .mediaplan-container .mediaplan-content .product-details {
+        margin: 0;
+        font-size: 14px; }
+      .output-section .mediaplan-container .mediaplan-content .mediaplan-header {
+        color: #48DFB5;
+        font-size: 20px;
+        font-weight: 100;
+        border-bottom: 1px solid #48DFB5; }
+      .output-section .mediaplan-container .mediaplan-content .mediaplan-column {
+        width: 24%;
+        display: inline-block;
+        vertical-align: top; }
+        .output-section .mediaplan-container .mediaplan-content .mediaplan-column .mediaplan-title {
+          margin: 0;
+          font-size: 14px;
+          color: #48DFB5;
+          display: inline-block;
+          font-weight: 100; }
+        .output-section .mediaplan-container .mediaplan-content .mediaplan-column .mediaplan-text {
+          font-size: 12px;
+          margin-right: 10px;
+          margin-top: 5px;
+          margin-bottom: 0px; }
+  .output-section .output-container {
+    background-color: #08040C;
+    height: 500px;
+    overflow: auto; }
+    .output-section .output-container .main-section {
+      margin-left: 17%;
+      display: inline-block;
+      height: 100%;
+      width: 60%; }
+      .output-section .output-container .main-section .target-audience, .output-section .output-container .main-section .media-plan {
+        border: 1px solid #48DFB5;
+        margin-top: 20px; }
+        .output-section .output-container .main-section .target-audience .output-header, .output-section .output-container .main-section .media-plan .output-header {
+          background-color: #48DFB5;
+          color: #08040C;
+          margin: 0;
+          font-size: 22px;
+          padding: 5px; }
+        .output-section .output-container .main-section .target-audience .content-col, .output-section .output-container .main-section .media-plan .content-col {
+          display: inline-block;
+          margin-left: 20px;
+          padding: 10px;
+          width: 20%;
+          vertical-align: top;
+          box-sizing: border-box; }
+          .output-section .output-container .main-section .target-audience .content-col h3, .output-section .output-container .main-section .media-plan .content-col h3 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            font-weight: 100; }
+          .output-section .output-container .main-section .target-audience .content-col span, .output-section .output-container .main-section .media-plan .content-col span {
+            font-size: 14px;
+            color: #48DFB5; }
+        .output-section .output-container .main-section .target-audience .expand-button, .output-section .output-container .main-section .media-plan .expand-button {
+          height: 25px;
+          width: 25px;
+          background-color: #48DFB5;
+          border-radius: 50px;
+          color: black;
+          float: right;
+          position: relative;
+          top: 18px;
+          right: 15px; }
+          .output-section .output-container .main-section .target-audience .expand-button span, .output-section .output-container .main-section .media-plan .expand-button span {
+            position: relative;
+            left: 6px;
+            top: 5px; }
+      .output-section .output-container .main-section .chart-section {
+        margin-left: 20px; }
+        .output-section .output-container .main-section .chart-section .barchart-container {
+          width: 270px;
+          height: 20px;
+          background-color: #291c69;
+          display: inline-block;
+          margin-right: 18px;
+          margin-top: 20px; }
+          .output-section .output-container .main-section .chart-section .barchart-container .bar-chart {
+            height: 100%;
+            background-color: #5A37F9; }
+        .output-section .output-container .main-section .chart-section .audience-desc {
+          margin: 0;
+          display: inline-block; }
+      .output-section .output-container .main-section .graph-label {
+        float: left;
+        font-size: 12px;
+        position: relative; }
+      .output-section .output-container .main-section .graph-section {
+        border-left: 1px solid #FFFFFF;
+        border-bottom: 1px solid #FFFFFF;
+        height: 270px;
+        width: 845px;
+        margin-top: 20px;
+        margin-bottom: 50px; }
+        .output-section .output-container .main-section .graph-section .graph-item {
+          position: relative;
+          display: inline-block; }
+          .output-section .output-container .main-section .graph-section .graph-item .graph-circle {
+            height: 30px;
+            width: 30px;
+            background-color: #DDF937;
+            border-radius: 100px;
+            display: inline-block; }
+          .output-section .output-container .main-section .graph-section .graph-item .circle-name {
+            position: relative;
+            font-size: 12px;
+            color: #DDF937; }
+    .output-section .output-container .editable-section {
+      width: 20%;
+      display: inline-block;
+      vertical-align: top;
+      padding: 10px; }
+      .output-section .output-container .editable-section .output-title {
+        font-size: 18px;
+        color: #5A37F9; }
+      .output-section .output-container .editable-section .editable-text:hover {
+        cursor: pointer; }
+  .output-section .inline-block {
+    display: inline-block; }

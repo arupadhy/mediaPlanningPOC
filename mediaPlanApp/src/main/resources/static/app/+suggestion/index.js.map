@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/app/+suggestion/index.ts"],"names":[],"mappings":";AAAA,qCAAoC,wBAAwB,CAAC;AAApD,yEAAoD","sourcesContent":["export { SuggestionComponent } from './suggestion.component';\r\n"]}

@@ -1,0 +1,75 @@
+.client-brief-section {
+  background-color: #FFFFFF;
+  font-weight: 100; }
+  .client-brief-section .results {
+    color: #939598;
+    margin-left: 17%;
+    font-size: 22px;
+    padding-top: 45px; }
+  .client-brief-section .client-brief-header {
+    padding-top: 45px;
+    color: #1E1131;
+    font-size: 14px;
+    margin-left: 17%; }
+    .client-brief-section .client-brief-header .client-name {
+      font-size: 30px;
+      display: block;
+      margin-bottom: 20px; }
+    .client-brief-section .client-brief-header .media-plan-action .add-plan-icon {
+      display: inline-block;
+      height: 12px;
+      width: 16px;
+      margin-left: 5px;
+      background-image: url("/app/shared/ui-sprite-icons.png");
+      background-position: -97px -210px; }
+    .client-brief-section .client-brief-header .media-plan-action .edit-plan-icon {
+      display: inline-block;
+      height: 12px;
+      width: 16px;
+      background-image: url("/app/shared/ui-sprite-icons.png");
+      background-position: -66px -113px; }
+    .client-brief-section .client-brief-header .media-plan-action span {
+      margin-right: 25px; }
+  .client-brief-section .client-brief-content {
+    background-color: #1E1131;
+    padding-left: 17%;
+    width: 100%;
+    padding-bottom: 20px; }
+    .client-brief-section .client-brief-content .client-brief-data {
+      float: left;
+      width: 30%;
+      background-color: #1E1131;
+      color: #FFFFFF; }
+      .client-brief-section .client-brief-content .client-brief-data .overview {
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 10px; }
+      .client-brief-section .client-brief-content .client-brief-data .description {
+        font-size: 14px; }
+      .client-brief-section .client-brief-content .client-brief-data .budget-distribution {
+        font-size: 14px;
+        width: 290px; }
+        .client-brief-section .client-brief-content .client-brief-data .budget-distribution .total-budget {
+          font-size: 16px; }
+        .client-brief-section .client-brief-content .client-brief-data .budget-distribution .budget-percent {
+          height: 90px;
+          width: 90px;
+          border-radius: 100px;
+          border: 5px solid #FFFFFF;
+          display: inline-block; }
+          .client-brief-section .client-brief-content .client-brief-data .budget-distribution .budget-percent span {
+            position: relative;
+            font-size: 28px;
+            top: 26px;
+            left: 20px; }
+        .client-brief-section .client-brief-content .client-brief-data .budget-distribution .used-budget, .client-brief-section .client-brief-content .client-brief-data .budget-distribution .available-budget {
+          position: relative;
+          display: inline-block; }
+        .client-brief-section .client-brief-content .client-brief-data .budget-distribution .used-budget {
+          left: 17px; }
+        .client-brief-section .client-brief-content .client-brief-data .budget-distribution .available-budget {
+          top: 30px;
+          right: 60px; }
+
+.clear {
+  clear: both; }

@@ -1,0 +1,19 @@
+<table class="table table-striped table-hover">
+    <thead class="thead-default">
+    <tr>
+        <th>Client</th>
+        <th>Campaigns</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let client of clients">
+        <td>{{client.name}}</td>
+        <td>
+            <ul *ngFor="let x of client.campaigns">
+                <li>{{x.name}}</li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>

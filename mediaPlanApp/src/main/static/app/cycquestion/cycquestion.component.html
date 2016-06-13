@@ -1,0 +1,25 @@
+<div  *ngIf="!isProofViewOpen" class="cyc-question-container draggable-question" (dragstart)="startDraggingQuestion($event,question,index)" draggable="true">
+    <!-- <query-builder></query-builder> -->
+      <!-- <span class="question-number">Q{{index + 1}}</span> -->
+      <p class='question' (click)="showRationale(question)" >?</p>
+        <span class='question-header'>{{question.nl}}</span>
+    	<ul>
+        <div *ngFor="let answer of question.answers" class='answers'>
+          
+    		    <li>
+              <div *ngIf="answer.recommended" class='checkBox'>&#10003;</div>
+                {{answer.nl}}
+            </li>
+        </div>
+    		<!-- <input type="checkbox"><li>{{answer.cycl}}</li> -->
+    	</ul>
+</div>
+
+<div id ="proofQuestionId" class="active">
+	<div *ngFor=" let proof of rationale">
+		<h3>{{proof.title}}</h3>
+		<span [innerHTML]="proof.content"></span>
+	</div>
+</div>
+
+ 

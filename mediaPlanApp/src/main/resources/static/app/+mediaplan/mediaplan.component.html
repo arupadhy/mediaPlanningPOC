@@ -1,0 +1,44 @@
+<form class="create-media-app">
+
+    <div [ngClass]="{active:!mediaPlan.campaignName}">
+        <div class='plan-input'>
+            <p>What is the name of this campaign?</p>
+            <textarea id="planNameInput" [(ngModel)]="planInput.planName" type="text" (keyup)="campaignNameEntered()" autofocus="autofocus">
+            </textarea>
+            <div [ngClass]="{active:!planInput.nextPage}" (click)="nextToCampaign()" class="next-icon"><span>&#10141;</span></div>
+        </div>
+    </div>
+
+    <div class='product-input' [ngClass]="{active:!planInput.productInput}">
+        <p>What product is this for?</p>
+        <textarea id="productNameInput" [(ngModel)]="productInput.productName" type="text" (keyup)="productNameEntered()">
+              </textarea>
+        <div [ngClass]="{active:!planInput.nextBusinessInput}" (click)="nextToProduct()" class="next-icon"><span>&#10141;</span></div>
+    </div>
+
+    <div class="business-input" [ngClass]="{active:!planInput.businessInput}">
+        <p>What are the business objectives?</p>
+        <textarea id="businessObjectiveInput"(change)="businessObjectivesEntered()" [(ngModel)]="businessObjectiveInput.name" type="text" (keyup)="businessObjectivesEntered()">
+                </textarea>
+        <div [ngClass]="{active:!planInput.nextKpiInput}" (click)="nextToBusinessInput()" class="next-icon"><span>&#10141;</span></div>
+
+    </div>
+    <div class='kpi-input' [ngClass]="{active: !planInput.kpiInput}">
+        <p>What are the KPI's to measure?</p>
+        <textarea id="kpiNameInput" (change)="kpisEntered()" [(ngModel)]="kpiToMeasureInput.name" type="text" (keyup)="kpisEntered()">
+                </textarea>
+        <div [ngClass]="{active:!planInput.nextAudienceInput}" (click)="nextToKpi()" class="next-icon"><span>&#10141;</span></div>
+
+    </div>
+
+    <div class="audience-input" [ngClass]="{active: !planInput.audienceInput}">
+        <p>Important concepts related to your target audience</p>
+        <textarea id="audienceNameInput" [(ngModel)]="audienceInput.name" type="text" (keyup)="audienceCriteriaEntered()" autofocus="autofocus">
+                  </textarea>
+        <div [ngClass]="{active:!planInput.nextPage}" class="next-icon" (click)="getCycConcepts()"><span>&#10141;</span></div>
+    </div>
+
+</form>
+
+<app-mediaplan-summary [planInput]="planInput" [productInput]="productInput" [audienceInput]="audienceInput" [mediaPlan]="mediaPlan"
+    [businessObjectiveInput]="businessObjectiveInput" [kpiToMeasureInput]="kpiToMeasureInput" [client]="client"></app-mediaplan-summary>

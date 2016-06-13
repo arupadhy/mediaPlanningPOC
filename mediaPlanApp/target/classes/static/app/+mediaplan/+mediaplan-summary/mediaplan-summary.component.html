@@ -1,0 +1,30 @@
+<div class="summary bottom-footer"[ngClass]="{footerposition:toggleSummary =='+'}">
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="collapsed-icon" (click)="toggleSummaryPlan()">{{toggleSummary}}</span>
+            <h3><span>{{client}}</span> Media Plan Summary</h3>
+            <hr />
+            <div class="specs group fixed-height" [ngClass]="{hide:toggleSummary =='+'}">
+                <dl class="first">
+                    <dt>Campaign</dt>
+                    <dd>{{planInput.planName}}</dd>
+
+                    <dt>Product</dt>
+                    <dd>{{productInput.productName}}</dd>
+
+                    <dt>Business Objective</dt>
+                    <dd>{{businessObjectiveInput.name}}</dd>
+
+                </dl>
+                <dl>
+                    <dt>KPI</dt>
+                    <dd>{{kpiToMeasureInput.name}}</dd>
+
+                    <dt>Target Audience</dt>
+                    <dd>{{audienceInput.name}}</dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,174 @@
+<div *ngIf="!mriQueryInProgress" class="suggestions-container">
+	<div *ngIf="questions.length" class="mri-questions-content">
+		<div class="product-info">
+			<h2 class="product-details">{{selectedInputs.client}} / {{selectedInputs.campaign}}/ {{selectedInputs.product}} </h2>
+			<p (dblclick)="enableEdit()" [ngClass]="{active:editAudienceEnabled}" class='target-audience'>"{{selectedInputs.audience}}"</p>
+			<div [ngClass]="{active:!editAudienceEnabled}" (keydown)="editTargetAudience($event)" class="selected-target-audience">
+				<input [(ngModel)]="selectedInputs.audience" type="text">
+			</div>
+		</div>
+		<h2 *ngIf="!mriFields.length" class='recommendations-total'>Cyc's MRI question builder  ({{questions.length}})</h2>
+	</div>
+	<div *ngIf="questions.length" class="suggestions-content">
+		<div class='query-builder'>
+			<div class='group-btn'> + Group </div>
+			<query-builder (query)="fireNewQuery($event)"></query-builder>
+			<div class="suggestions-list scroller">
+				<cyc-question sessionId="{{sessionId}}" *ngFor="let list of questions;let i = index" [question]="list" [index]="i"></cyc-question>
+			</div>
+		</div>
+		<div *ngIf="reachData" class="mri-query-container">
+			<h2 class='mri-query-header'>MRI Query</h2>
+			<p class='new-query'>{{queryConstructedSoFar}}</p>
+			<span *ngIf="!queryConstructedSoFar">Make your selections to the left</span>
+			<h2 class='mri-query-header'>MRI Expected Results</h2>
+			<h4 class='mri-expected-header'>Target Reach</h4>
+			<span class='reach-value'>{{reachData.targetReach}}</span>
+			<div class='target-reach-bar'></div>
+			<h4 class='mri-expected-header'>Current Reach</h4>
+			<span class='reach-value'>{{reachData.currentReach}}</span>
+			<div class='current-reach-bar'>
+				<div class='current-reach-progress' [style.width]="((reachData.currentReach / reachData.targetReach) * 100) + '%'"></div>
+			</div>
+			<div class='current-reach-overflow-bar' *ngIf="reachData.currentReach > reachData.targetReach">
+				<div class='current-reach-overflow' [style.width]="((reachData.currentReach / reachData.targetReach) * 10) + '%'"></div>
+			</div>
+			<span *ngIf="reachData.currentReach > reachData.targetReach">{{reachData.currentReach - reachData.targetReach}}</span>
+			<div class='mri-query-footer'>
+				<div class='footer-item'>
+					<div class='progress-circ'>
+						<span>{{reachData.vertical}}%</span>
+					</div>
+					<span class='progress-title'>VERTICAL</span>
+				</div>
+				<div class='footer-item'>
+					<div class='progress-circ'>
+						<span>{{reachData.horizontal}}%</span>
+					</div>
+					<span class='progress-title'>HORIZONTAL</span>
+				</div>
+				<div class='footer-item'>
+					<h3>{{reachData.index}}</h3>
+					<span class='progress-title'>INDEX</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="questions.length" class='next-page'>
+		<h4>Select Cyc's recommended MRI fields for Export
+	    <div [ngClass]="{hide:!queryConstructedSoFar}" class="next-icon" (click)="loadMriFields()" ><span>&#10141;</span></div>
+	  </h4>
+	</div>
+</div>
+
+
+
+
+<div *ngIf="mriFields.length && !audienceInsightQueryInProgress" class="mri-fields-constraints">
+	<div *ngIf="questions.length" class="mri-questions-content">
+		<div class="product-info">
+			<h2 class="product-details">{{selectedInputs.client}} / {{selectedInputs.campaign}}/ {{selectedInputs.product}} </h2>
+			<p (dblclick)="enableEdit()" [ngClass]="{active:editAudienceEnabled}" class='target-audience'>"{{selectedInputs.audience}}"</p>
+			<div [ngClass]="{active:!editAudienceEnabled}" (keydown)="editTargetAudience($event)" class="selected-target-audience">
+				<input [(ngModel)]="selectedInputs.audience" type="text">
+			</div>
+		</div>
+		<h2 *ngIf="!mriFields.length" class='recommendations-total'>Cyc's MRI question builder  ({{questions.length}})</h2>
+		<h2 *ngIf="mriFields.length && !audienceInsightQueryInProgress" class='recommendations-total'>Cyc's MRI questions for export  ({{mriFields.length}})</h2>
+	</div>
+	<div class="recommended-fields-container">
+		<div class="recommended-fields-content">
+			<div class="query-fields">
+				<div class="recommended-fields-header">
+					<span class="toggle">+</span>
+					<span class="fields">Standard Fields</span>
+				</div>
+				<ul>
+					<li *ngFor="let field of recommendedFields" (click)='selectField(field)'>
+						<div class='checkBox' [ngClass]="{hide:field.fieldSelected}">&#10003;</div>{{field.value}}
+					</li>
+				</ul>
+			</div>
+
+			<div class='additional-query-fields'>
+				<!-- <div class="mri-question-list"> -->
+				<div class="recommended-fields-header">
+					<span class="toggle">+</span>
+					<span class="fields">Additional Suggested Fields</span>
+				</div>
+				<div class='question-container'>
+					<div *ngFor="let q of mriFields" class="mri-question">
+						<div class='mri-question-header'>
+							<span (click)="selectQuestion(q)">{{q.nl}}</span>
+						</div>
+						<ul>
+							<li *ngFor="let answer of q.answers" (click)='selectAnswer(answer)'>
+								<div class='checkBox'>&#10003;</div>
+								<span>{{answer.nl}}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="mriFields.length && !audienceInsightQueryInProgress" class='next-page'>
+		<h4>Get Audience Insight
+				<div [ngClass]="{hide:!allSelectedFields.length > 0}" class="next-icon" (click)="loadInsight()"><span>&#10141;</span></div>
+			</h4>
+	</div>
+</div>
+
+<div *ngIf="mriQueryInProgress && audienceInsightQueryInProgress" class='audience-insights-section'>
+	<div *ngIf="questions.length" class="mri-questions-content">
+		<div class="product-info">
+			<h2 class="product-details">{{selectedInputs.client}} / {{selectedInputs.campaign}}/ {{selectedInputs.product}} </h2>
+			<p (dblclick)="enableEdit()" [ngClass]="{active:editAudienceEnabled}" class='target-audience'>"{{selectedInputs.audience}}"</p>
+			<div [ngClass]="{active:!editAudienceEnabled}" (keydown)="editTargetAudience($event)" class="selected-target-audience">
+				<input [(ngModel)]="selectedInputs.audience" type="text">
+			</div>
+		</div>
+		<h2 class='recommendations-total'>Cyc's Recommended Interesting Facts</h2>
+	</div>
+	<div *ngIf="contrastingFacts" class="audience-insights-container">
+		<div class='audience-insights-content'>
+
+			<div>
+				<h2>INTERESTING VALUES</h2>
+				<table>
+					<tr>
+						<th>Question/Responses</th>
+						<th>Vert %</th>
+						<th>Index</th>
+					</tr>
+					<tr *ngFor="let interestingVal of interestingValues">
+						<td>{{interestingVal.resp}}</td>
+						<td>{{interestingVal.vert}}</td>
+						<td>{{interestingVal.index}}</td>
+
+					</tr>
+				</table>
+			</div>
+
+			<div>
+				<h2>INTERESTING FACTS</h2>
+				<ul *ngFor="let interestingFact of interestingFacts">
+					<li>{{interestingFact.insight}}</li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>CONTRASTING FACTS</h2>
+				<ul *ngFor="let contrastingFact of contrastingFacts">
+					<li>{{contrastingFact.insight}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class='next-page'>
+			<h4>Cyc's Tactical Audience Recommendations
+				<div  (click)="showOutputs()" class="next-icon" ><span>&#10141;</span></div>
+
+			</h4>
+		</div>
+	</div>

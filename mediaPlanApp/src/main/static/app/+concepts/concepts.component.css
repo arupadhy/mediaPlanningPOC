@@ -1,0 +1,168 @@
+.concepts-container {
+  background-color: #1E1131;
+  font-weight: 100; }
+  .concepts-container .concepts-plan-content {
+    background-color: #1E1131;
+    margin-left: 17%;
+    height: 105px; }
+  .concepts-container .product-info {
+    color: #FFFFFF;
+    font-weight: 600;
+    letter-spacing: 1px; }
+    .concepts-container .product-info .product-details {
+      font-size: 14px;
+      margin: 0; }
+    .concepts-container .product-info .client-name {
+      font-size: 16px; }
+    .concepts-container .product-info .campaign-name {
+      font-size: 26px;
+      margin-bottom: 10px;
+      margin-top: 10px; }
+    .concepts-container .product-info .product-name {
+      font-size: 12px;
+      font-weight: 200;
+      margin: 0px; }
+    .concepts-container .product-info .target-audience {
+      font-style: italic;
+      font-weight: 100;
+      font-size: 14px; }
+    .concepts-container .product-info .target-audience:hover {
+      font-style: italic;
+      color: orange;
+      cursor: crosshair; }
+    .concepts-container .product-info .selected-target-audience {
+      background-color: white; }
+      .concepts-container .product-info .selected-target-audience input {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid white;
+        width: 90%;
+        color: black;
+        margin-bottom: 2px; }
+  .concepts-container .recommendations-total {
+    color: #48DFB5;
+    margin: 0px;
+    margin-bottom: 17px;
+    font-weight: 100; }
+  .concepts-container .concepts-sentences-container {
+    background-color: #08040C;
+    height: 500px;
+    overflow: auto; }
+    .concepts-container .concepts-sentences-container .rationale-container {
+      position: absolute;
+      left: 50px;
+      width: 150px; }
+      .concepts-container .concepts-sentences-container .rationale-container h3 {
+        margin: 0;
+        color: #48DFB5; }
+      .concepts-container .concepts-sentences-container .rationale-container span {
+        color: #FFFFFF; }
+    .concepts-container .concepts-sentences-container .concepts-sentence-list {
+      margin-left: 17%;
+      padding-top: 20px;
+      overflow: auto; }
+      .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence {
+        width: 80%;
+        height: auto;
+        clear: both; }
+        .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence .question {
+          font-size: 18px;
+          text-align: center;
+          margin: 0px;
+          height: 20px;
+          width: 20px;
+          color: #48DFB5;
+          border: 1px solid #48DFB5;
+          border-radius: 100px;
+          display: inline-block;
+          margin-right: 7px;
+          margin-top: 3px;
+          float: left; }
+        .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence .active {
+          background-color: #48DFB5;
+          color: #1E1131; }
+        .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence .concept-header {
+          height: 30px;
+          border: 1px solid #FFFFFF;
+          color: #FFFFFF; }
+          .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence .concept-header .toggle {
+            font-size: 24px;
+            padding-left: 5px; }
+          .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence .concept-header .new-concept {
+            vertical-align: middle;
+            background-color: orange;
+            padding: 2px;
+            margin-left: 2px;
+            border-radius: 5px; }
+        .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence .selected {
+          background-color: #48DFB5;
+          color: #08040C;
+          border: 1px solid #48DFB5; }
+        .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence ul {
+          padding-left: 3px;
+          margin-top: 10px; }
+          .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence ul li {
+            color: white;
+            list-style: none;
+            font-size: 14px;
+            padding-bottom: 10px; }
+            .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence ul li .checkBox {
+              font-size: 14px;
+              text-align: center;
+              margin: 0px;
+              height: 20px;
+              width: 20px;
+              color: #48DFB5;
+              border: 1px solid #48DFB5;
+              border-radius: 100px;
+              display: inline-block; }
+            .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence ul li .hide {
+              visibility: hidden; }
+        .concepts-container .concepts-sentences-container .concepts-sentence-list .concept-sentence .remove {
+          display: none; }
+  .concepts-container .next-page {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background-color: #48DFB5;
+    vertical-align: middle;
+    position: relative;
+    bottom: 0; }
+    .concepts-container .next-page h4 {
+      font-size: 20px;
+      font-weight: 100;
+      color: #1E1131;
+      margin: 0;
+      padding-top: 20px; }
+
+.next-icon {
+  color: #FFFFFF;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  transform: rotate(90deg);
+  display: inline-block;
+  position: relative;
+  top: -10px;
+  left: 10px; }
+  .next-icon span {
+    font-size: 22px;
+    position: relative;
+    top: 8px;
+    left: 0px; }
+
+.next-icon:hover {
+  cursor: pointer; }
+
+.active, .index-concept {
+  display: none; }
+
+.active {
+  display: none; }
+
+.question-proof {
+  display: none; }
+  .question-proof h3 {
+    color: #48DFB5; }
